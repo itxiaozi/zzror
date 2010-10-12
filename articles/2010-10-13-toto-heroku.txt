@@ -1,0 +1,28 @@
+title: 搭建toto+heroku轻量级博客系统
+author: 我不累，真的不累
+date: 2010/10/13
+
+记录搭建toto+heroku轻量级博客系统过程，备忘。
+
+gem install heroku
+git clone git://github.com/cloudhead/dorothy.git zzror
+cd zzror
+heroku create
+# heroku create会返回一个类似 http://xxx.heroku.com 的网址，在文件config.ru中的Toto::Server.new block中追加
+# set :url, 'http://xxx.heroku.com'
+git commit -am "Added URL"
+git push heroku master
+
+如果还没有ssh-key，可以用 ssh-keygen -C 'your@email.com' -t rsa 命令来生成一个。 
+
+在heroku中修改应用名字xxx为zzror，修改后执行下面操作：
+
+git remote rm heroku
+git remote add heroku git@heroku.com:zzror.git
+
+接着修改config.ru中的url，修改后执行
+
+git commit -am "Modified URL"
+git push heroku master
+
+toto文档http://github.com/cloudhead/toto
