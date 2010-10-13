@@ -1,3 +1,4 @@
+slug:toto-heroku
 title: 搭建toto+heroku轻量级博客系统
 author: 我不累，真的不累
 date: 2010/10/13
