@@ -1,4 +1,5 @@
 require 'toto'
+require './pinyin'
 
 @config = Toto::Config::Defaults
 
@@ -6,8 +7,9 @@ task :default => :new
 
 desc "Create a new article."
 task :new do
+  py = PinYin.instance
   title = ask('Title: ')
-  slug = title.empty?? nil : title.strip.slugize
+  slug = title.empty?? nil : py.to_permlink(title).strip.slugize
 
   article = {'title' => title, 'slug' => slug,'date' => Time.now.strftime("%d/%m/%Y")}.to_yaml
   article << "\n"
