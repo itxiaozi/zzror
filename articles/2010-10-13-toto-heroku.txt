@@ -3,10 +3,3 @@ author: 我不累，真的不累
 date: 2010/10/13
 
 记录搭建toto+heroku轻量级博客系统过程，备忘。
-
-    gem install heroku
-    git clone git://github.com/cloudhead/dorothy.git zzror
-    cd zzror
-    heroku create
-
-
