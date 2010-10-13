@@ -8,12 +8,14 @@ date: 2010/10/13
     git clone git://github.com/cloudhead/dorothy.git zzror
     cd zzror
     heroku create
-    # heroku create会返回一个类似 http://xxx.heroku.com 的网址，在文件config.ru中的Toto::Server.new block中追加
-    # set :url, 'http://xxx.heroku.com'
+
+
+heroku create会返回一个类似 http://xxx.heroku.com 的网址，在文件config.ru中的Toto::Server.new block中追加set :url, 'http://xxx.heroku.com'
+
     git commit -am "Added URL"
     git push heroku master
 
-如果还没有ssh-key，可以用 ssh-keygen -C 'your@email.com' -t rsa 命令来生成一个。 
+如果还没有ssh-key，可以用` ssh-keygen -C your@email.com -t rsa` 命令来生成一个。 
 
 在heroku中修改应用名字xxx为zzror，修改后执行下面操作：
 
@@ -25,4 +27,4 @@ date: 2010/10/13
     git commit -am "Modified URL"
     git push heroku master
 
-[toto文档](http://github.com/cloudhead/toto)
+
